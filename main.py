@@ -1,3 +1,12 @@
+thu_dict = {
+    1: 'thu2',
+    2: 'thu3',
+    3: 'thu4',
+    4: 'thu5',
+    5: 'thu6',
+    6: 'thu7',
+    0: 'Chu nhat'
+}
 while True:
   ngay = int(input('Nhap ngay: '))
   while 0 > int(ngay) > 31:
@@ -16,5 +25,7 @@ while True:
           print('vui long nhap lai!')
           thang = int(input('Nhap thang: '))
   nam = int(input('Nhap nam: '))
-  thu = (ngay + (nam - 1) * (366 if (nam % 4 == 0 and nam % 100 != 0) or (nam % 400 == 0) else 365)) % 7
-  print('thu: ', thu)
+  thu = (ngay + (nam - 1) * (366 if (nam % 4 == 0 and nam % 100 != 0) or (nam % 400 == 0) else 365)) % 7 +3
+  thu = thu_dict.get(thu, 'Invalid day')
+  print('Thu: ', thu)
+
